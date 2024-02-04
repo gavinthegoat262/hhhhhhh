@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonster</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white; /* Set default text color to white */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center; /* Center align content */
+            padding-top: 50px; /* Add padding to the top */
+        }
+        .title {
+            font-size: 2rem; /* Adjust font size as needed */
+        }
+        .shoestar {
+            color: red; /* Set text color to red */
+            font-size: 2.5rem; /* Adjust font size as needed */
+            font-weight: bold; /* Add bold font weight */
+            text-transform: uppercase; /* Convert text to uppercase */
+            margin-top: 20px; /* Add margin to separate from other content */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title shoestar">SHOESTAR</h1>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #uploadForm {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #previewImage {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="uploadForm">
+        <h2>Upload an Image</h2>
+        <input type="file" id="imageFile" accept="image/*"><br><br>
+        <button onclick="uploadImage()">Upload Image</button>
+    </div>
+
+    <img id="previewImage" src="#" alt="Preview Image" style="display:none">
+
+    <script>
+        function uploadImage() {
+            var fileInput = document.getElementById('imageFile');
+            var file = fileInput.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var previewImage = document.getElementById('previewImage');
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                console.log('No file selected');
+            }
+        }
+    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #uploadForm {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #previewImageContainer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #previewImage {
+            max-width: 200px; /* Set maximum width for the image */
+            border: 2px solid black; /* Add border around the image */
+            border-radius: 5px;
+        }
+    </style>
